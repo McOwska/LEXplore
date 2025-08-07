@@ -1,9 +1,31 @@
+@keyframes fadeToPrimary {
+    0% {
+      background-color: #FF8040;
+    }
+    100% {
+      background-color: #001BB7;
+    }
+}
+
+@keyframes fadeToSecondary {
+    0% {
+      background-color: #001BB7;
+    }
+    100% {
+        background-color: #FF8040;
+    }
+}
+
 .primary {
-    background-color: #0B9FC3;
+    background-color: #001BB7;
+    animation: fadeToPrimary 0.5s ease forwards;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .secondary {
-    background-color: #28C993;
+    background-color: #FF8040;
+    animation: fadeToSecondary 0.5s ease forwards;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button {
@@ -15,6 +37,7 @@ button {
     font-size: large;
     cursor: pointer;
     min-width: 10rem;
+    color: white;
 }
 
 button:hover {
