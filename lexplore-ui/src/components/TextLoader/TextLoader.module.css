@@ -6,3 +6,19 @@
     gap: 3rem;
     padding: 1rem;
 }
+
+.textAreaContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.textArea {
+    width: 90%;
+    margin: 1rem;
+    padding: 1rem;
+    font-family: inherit;
+}
