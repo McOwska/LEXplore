@@ -17,7 +17,7 @@ const TextLoader = () => {
                 <p>{intl.formatMessage({id: "textLoader.or"})}</p>
                 <TypeTextButton toggleTextArea={() => setShouldShowTextArea(true)} clearContent={() => setTextContent('')}/>
             </div>
-            {shouldShowTextArea && <TextArea content={textContent} setContent={setTextContent}/>}
+            {shouldShowTextArea && <TextArea content={textContent} setContent={setTextContent} closeTextArea={() => setShouldShowTextArea(false)}/>}
         </div>
     );
 }
