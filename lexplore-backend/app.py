@@ -1,10 +1,11 @@
+# source venv/bin/activate
 # flask run --host 0.0.0.0 --port 8000 --debugger
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins="*", methods=["GET", "POST", "OPTIONS"], allow_headers="*")  # backend running on localhost: http://localhost:5000 accepts requests from http://localhost:3000
+CORS(app, origins="*", methods=["GET", "POST", "OPTIONS"], allow_headers="*") 
 
 @app.route("/")
 def index():
