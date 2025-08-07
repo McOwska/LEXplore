@@ -3,5 +3,8 @@
     "app.description": "learn through reading",
     "button.importText": "Import .TXT file",
     "button.typeText": "Type own text",
-    "textLoader.or": "or"
+    "textLoader.or": "or",
+    "alert.chooseTxtFile": "Please choose a .TXT file",
+    "textLoader.placeholder": "Type or paste your text here...",
+    "textLoader.submit": "Submit"
   }

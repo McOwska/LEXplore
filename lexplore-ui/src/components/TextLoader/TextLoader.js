@@ -13,11 +13,24 @@ const TextLoader = () => {
     return (
         <div>
             <div className={styles.backgroundContainer}>
-                <ImportButton toggleTextArea={() => setShouldShowTextArea(true)} primary={!shouldShowTextArea} setTextContent={setTextContent} />
+                <ImportButton
+                    toggleTextArea={() => setShouldShowTextArea(true)}
+                    primary={!shouldShowTextArea}
+                    setTextContent={setTextContent}
+                />
                 <p>{intl.formatMessage({id: "textLoader.or"})}</p>
-                <TypeTextButton toggleTextArea={() => setShouldShowTextArea(true)} clearContent={() => setTextContent('')}/>
+                <TypeTextButton
+                    toggleTextArea={() => setShouldShowTextArea(true)}
+                    clearContent={() => setTextContent('')}
+                />
             </div>
-            {shouldShowTextArea && <TextArea content={textContent} setContent={setTextContent} closeTextArea={() => setShouldShowTextArea(false)}/>}
+            {shouldShowTextArea &&
+                <TextArea
+                    content={textContent}
+                    setContent={setTextContent}
+                    closeTextArea={() => setShouldShowTextArea(false)}
+                />
+            }
         </div>
     );
 }
