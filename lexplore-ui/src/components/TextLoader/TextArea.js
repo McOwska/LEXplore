@@ -1,12 +1,14 @@
 import { useIntl } from "react-intl";
 import CustomButton from "../CustomButton/CustomButton";
 import styles from "./TextLoader.module.css";
+import { useText } from "../../contexts/TextContext";
 
 const TextArea = ({ content, setContent, closeTextArea }) => {
     const intl = useIntl();
+    const { setText } = useText();
+
     const handleSubmit = () => {
-        console.log("Submitted content:", content);
-        // here the text should be added to local storage, alternatively sone usecontext could be used
+        setText(content);
         closeTextArea();
     };
 
