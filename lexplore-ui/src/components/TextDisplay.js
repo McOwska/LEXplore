@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { API_URL } from '../constants';
 
 const TextDisplay = ({ text = '' }) => {
   const sentences = useMemo(() => {
@@ -9,7 +10,7 @@ const TextDisplay = ({ text = '' }) => {
   const translateWord = (word) => {
     console.log('Translating word:', word);
   
-    fetch('http://localhost:8000/translate-word', {
+    fetch(`${API_URL}/translate-word`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ const TextDisplay = ({ text = '' }) => {
   const translateSentence = (sentence) => {
     console.log('Translating word:', sentence);
   
-    fetch('http://localhost:8000/translate-sentence', {
+    fetch(`${API_URL}/translate-sentence`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
