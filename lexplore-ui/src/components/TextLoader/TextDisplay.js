@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { API_URL } from '../constants';
+import { API_URL } from '../../constants';
 
 const TextDisplay = ({ text = '' }) => {
   const sentences = useMemo(() => {
