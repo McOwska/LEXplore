@@ -14,6 +14,8 @@ A lightweight web application that helps users improve their Swedish by reading 
   - Word translations from a Swedish-English dictionary (JSON-based).
   - Sentence translations powered by a pre-trained MarianMT machine translation model.
 
+## ✨ Figma
+https://www.figma.com/design/CkDUIH3cnK4C1MM1bXIn1w/LEXplore?node-id=0-1&t=FAGmjd8lpCWFfKhy-1
 
 ---
 
