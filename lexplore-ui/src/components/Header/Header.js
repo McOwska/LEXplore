@@ -1,4 +1,5 @@
 import { useIntl } from 'react-intl';
+import styles from './Header.module.css';
 
 const Header = () => {
     const intl = useIntl();
