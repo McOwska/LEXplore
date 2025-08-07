@@ -18,6 +18,7 @@ const ImportButton = ({ toggleTextArea, primary, setTextContent }) => {
         const text = e.target.result;
         setTextContent(text);
         toggleTextArea();
+        event.target.value = "";
       };
       reader.readAsText(file);
     } else {

@@ -15,9 +15,9 @@ const TextLoader = () => {
             <div className={styles.backgroundContainer}>
                 <ImportButton toggleTextArea={() => setShouldShowTextArea(true)} primary={!shouldShowTextArea} setTextContent={setTextContent} />
                 <p>{intl.formatMessage({id: "textLoader.or"})}</p>
-                <TypeTextButton toggleTextArea={() => setShouldShowTextArea(true)}/>
+                <TypeTextButton toggleTextArea={() => setShouldShowTextArea(true)} clearContent={() => setTextContent('')}/>
             </div>
-            {shouldShowTextArea && <TextArea content={textContent}/>}
+            {shouldShowTextArea && <TextArea content={textContent} setContent={setTextContent}/>}
         </div>
     );
 }
