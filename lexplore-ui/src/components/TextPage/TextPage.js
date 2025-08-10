@@ -1,11 +1,12 @@
 import { useText } from "../../contexts/TextContext";
+import styles from "./TextPage.module.css";
 
 const TextPage = () => {
     const { text } = useText();
 
     return (
-        <div>
-            <p>{text ? text : "No text content available."}</p>
+        <div className={styles.pageTextContainer} >
+            <p className={styles.pageTextPContent}> {text ? text : "No text content available."}</p>
         </div>
     );
 }

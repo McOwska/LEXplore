@@ -1,0 +1,8 @@
+.pageTextPContent {
+    white-space: pre-wrap;
+    text-align: justify;
+}
+
+.pageTextContainer {
+    padding: 5%;
+}
