@@ -7,12 +7,45 @@
     padding: 5%;
 }
 
-.word {
+.wordButton {
+    all: unset;
     cursor: pointer;
-    padding: 0 2px;
-    border-radius: 4px;
+    font: inherit;
+    background: none;
+    color: inherit;
 }
 
-.word:hover {
+.wordButton:hover {
+    padding: 0.1rem 0.5rem;
     background: rgba(0,0,0,0.06);
+    box-shadow: none;
+    cursor: pointer;
 }
+
+.wordButton:focus::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translate(-50%, -6px);
+    background: #FF8040;
+    color: white;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.5rem;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+.wordWrapper {
+   position: relative;
+   display: inline; 
+}
+
+.sentenceHighlighted {
+    background: rgba(255, 128, 64, 0.15); /* delikatny pomarańcz pod Twoją kolorystykę */
+    border-radius: 6px;
+    box-shadow: 0 0 0 2px rgba(255, 128, 64, 0.25) inset;
+    /* transition: background 120ms ease; */
+}
+
