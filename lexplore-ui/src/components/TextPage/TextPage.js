@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useText } from "../../contexts/TextContext";
 import styles from "./TextPage.module.css";
-
-const sentenceRegex = /[^.!?]+[.!?]*|\S+/g; 
+import { API_URL } from "../../constants";
 
 const TextPage = () => {
     const { text } = useText();
@@ -31,16 +30,37 @@ const TextPage = () => {
         };
       }, []);
 
-    const handleWordClick = (word) => {
-        console.log(word);
-        setTranslation(`translated word: ${word}`);
+    const getTranslation = async (payload, item) => {
+        try {
+          const res = await fetch(`${API_URL}/translate-${item}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ payload }),
+          });
+      
+          if (!res.ok) throw new Error('Translation failed');
+      
+          const data = await res.json();
+          return data.translation;
+        } catch (err) {
+          console.error('Error:', err);
+          return err; 
+        }
     };
 
-    const handleWordContext = (e, sentence, idx) => {
+    const handleWordClick = async (word) => {
+        const translated = await getTranslation(word, 'word');
+        setTranslation(translated);
+    };
+
+    const handleWordContext = async (e, sentence, idx) => {
         e.preventDefault();
         console.log(sentence.trim());
         setClickedSentence(idx);
-        setTranslation(`translated sentence: ${sentence.trim()}`);
+        const translated = await getTranslation(sentence.trim(), 'sentence');
+        setTranslation(translated);
      };
 
      return (
