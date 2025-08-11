@@ -1,10 +1,13 @@
 .pageTextPContent {
     white-space: pre-wrap;
     text-align: justify;
+    max-width: 60rem;
 }
 
 .pageTextContainer {
-    padding: 5%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .wordButton {
