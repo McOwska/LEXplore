@@ -14,14 +14,14 @@ def index():
 @app.route("/translate-word", methods=["POST"])
 def translate_word():
     data = request.get_json()
-    word = data.get("word", "")
+    word = data.get("payload", "")
     return jsonify({"translation": word})
 
 
 @app.route("/translate-sentence", methods=["POST"])
 def translate_sentence():
     data = request.get_json()
-    sentence = data.get("sentence", "")
+    sentence = data.get("payload", "")
     return jsonify({"translation": sentence})
 
 
