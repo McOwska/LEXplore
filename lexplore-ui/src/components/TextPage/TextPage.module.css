@@ -19,10 +19,10 @@
 }
 
 .wordButton:hover {
+    background: rgba(255, 128, 64, 0.15);
+    border-radius: 6px;
+    box-shadow: 0 0 0 2px rgba(255, 128, 64, 0.25) inset;
     padding: 0.1rem 0.5rem;
-    background: rgba(0,0,0,0.06);
-    box-shadow: none;
-    cursor: pointer;
 }
 
 .wordButton:focus::after {
@@ -46,9 +46,10 @@
 }
 
 .sentenceHighlighted {
-    background: rgba(255, 128, 64, 0.15); /* delikatny pomarańcz pod Twoją kolorystykę */
+    background: rgba(255, 128, 64, 0.15);
     border-radius: 6px;
     box-shadow: 0 0 0 2px rgba(255, 128, 64, 0.25) inset;
+    padding: 0.1rem 0.5rem;;
     /* transition: background 120ms ease; */
 }
 

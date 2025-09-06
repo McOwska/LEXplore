@@ -10,17 +10,23 @@ const TextPage = () => {
     const sentences = content.match(/[^.!?]+[.!?]*/g) || [content];
 
     const [clickedSentence, setClickedSentence] = useState(null);
+    const [clickedWord, setClickedWord] = useState(null);
     const [translation, setTranslation] = useState(null);
 
     useEffect(() => {
         const handleGlobalPointerDown = () => {
             setClickedSentence(null);
+            setClickedWord(null);
+            setTranslation(null);
         };
       
         document.addEventListener("pointerdown", handleGlobalPointerDown, true);
       
         const handleKeyDown = (e) => {
-          if (e.key === "Escape") setClickedSentence(null);
+          if (e.key === "Escape") {
+            setClickedSentence(null);
+            setTranslation(null);
+          }
         };
         document.addEventListener("keydown", handleKeyDown);
       
@@ -50,7 +56,8 @@ const TextPage = () => {
         }
     };
 
-    const handleWordClick = async (word) => {
+    const handleWordClick = async (word, sIdx, tIdx) => {
+        setClickedWord({ sIdx, tIdx });
         const translated = await getTranslation(word, 'word');
         setTranslation(translated);
     };
@@ -87,23 +94,21 @@ const TextPage = () => {
                     }
     
                     return (
-                        <span className={styles.wordWrapper}>
-                            <button
-                                key={`s-${sIdx}-w-${tIdx}`}
-                                className={styles.wordButton}
-                                data-tooltip={translation} 
-                                onClick={(e) => {
-                                    if (e.button === 0) {
-                                      handleWordClick(cleanWord);
-                                    } else if (e.button === 2) {
-                                      handleWordContext(e, sentence, sIdx);
-                                    }
-                                  }}
-                                onContextMenu={(e) => handleWordContext(e, sentence, sIdx)}
-                            >
-                                {token}
-                            </button>
-                        </span>   
+                      <span className={styles.wordWrapper} key={`s-${sIdx}-twrap-${tIdx}`}>
+                        <button
+                          key={`s-${sIdx}-w-${tIdx}`}
+                          className={`${styles.wordButton} ${
+                            clickedWord?.sIdx === sIdx && clickedWord?.tIdx === tIdx
+                              ? styles.sentenceHighlighted
+                              : ""
+                          }`}
+                          data-tooltip={translation}
+                          onClick={(e) => handleWordClick(cleanWord, sIdx, tIdx)}
+                          onContextMenu={(e) => handleWordContext(e, sentence, sIdx)}
+                        >
+                          {token}
+                        </button>
+                      </span>   
                     );
                   })}
                 </span>
