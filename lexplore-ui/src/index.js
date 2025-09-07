@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { IntlProvider } from 'react-intl';
+import { I18nProvider } from './contexts/LanguageContext';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -10,13 +10,9 @@ import en from './i18n/en.json';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <IntlProvider
-      locale="en"
-      defaultLocale="en"
-      messages={en}
-    >
+    <I18nProvider>
       <App />
-    </IntlProvider>
+    </I18nProvider>
   </React.StrictMode>
 );
 

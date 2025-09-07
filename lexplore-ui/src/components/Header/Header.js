@@ -8,7 +8,7 @@ const Header = () => {
 
     return (
         <div className={styles.headerContainer}>
-            <div className={`${styles.sideContainer} ${styles.sideContainerLeft}}`}>
+            <div className={`${styles.sideContainer} ${styles.sideContainerLeft}`}>
                 <MenuButton />
             </div>
             <div>
