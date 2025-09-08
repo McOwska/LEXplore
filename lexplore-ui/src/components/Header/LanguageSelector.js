@@ -36,7 +36,7 @@ const LanguageSelector = () => {
       className={`${styles.languageSelectorContainer} ${openDropdown ? styles.languageSelectorOpened : ""}`}
     >
       <button
-        className={styles.languageSelectorMainButton}
+        className={`${styles.languageSelectorMainButton} ${styles.buttonColors}`}
         onClick={() => setOpenDropdown(!openDropdown)}
       >
         <GrLanguage />

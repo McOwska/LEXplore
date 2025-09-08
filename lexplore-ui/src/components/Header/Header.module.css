@@ -32,18 +32,15 @@ h2 {
 }
 
 .languageSelectorMainButton {
-    /* background-color: #E9E9E9; */
-    background-color: transparent;
-    color: #bbbbbb;
     align-items: center;
     display: flex;
     justify-content: space-between;
     box-shadow: none;
-}
 
-.languageSelectorMainButton p {
-    margin: 0;
-    line-height: 1;
+    p {
+        margin: 0;
+        line-height: 1;
+    }
 }
 
 .languageSelectorMainButton:hover {
