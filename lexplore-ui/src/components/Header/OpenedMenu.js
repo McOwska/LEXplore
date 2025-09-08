@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 const OpenedMenu = ({ toggleMenu }) => {
     const intl = useIntl();
     return (
-        <div className={`${styles.openedMenu}`}>
+        <div className={`${styles.openedMenu} ${styles.buttonColors}`}>
             {/* Placeholder for the opened menu content */}
             <GrMenu className={styles.openedMenuIcon} onClick={toggleMenu}/>
             <button>{intl.formatMessage({id: "menu.availableLanguages"})}</button>

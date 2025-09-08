@@ -39,7 +39,7 @@ const LanguageSelector = () => {
                     <div className={styles.languageSelectorOptionsWrapper}>{
                         SUPPORTED_LANGUAGES.filter(({code}) => code !== locale).map(({ code, label }) => {
                         return (
-                            <button className={styles.languageOptionButton} key={code} onClick={() => changeLanguage(code)}>
+                            <button className={`${styles.languageOptionButton} ${styles.buttonColors}`} key={code} onClick={() => changeLanguage(code)}>
                                 {label}
                             </button>
                         )

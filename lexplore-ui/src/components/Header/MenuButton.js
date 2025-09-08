@@ -25,7 +25,7 @@ const MenuButton = () => {
     return (
         <div ref={containerRef} className={styles.menuContainer}>
             { !isMenuOpened ? 
-                <button className={styles.menuIcon} onClick={() => setIsMenuOpened(!isMenuOpened)}>
+                <button className={`${styles.menuIcon} ${styles.buttonColors}`} onClick={() => setIsMenuOpened(!isMenuOpened)}>
                     <GrMenu />
                 </button> 
                 :
