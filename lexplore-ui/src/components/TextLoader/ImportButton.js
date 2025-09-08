@@ -22,7 +22,7 @@ const ImportButton = ({ toggleTextArea, primary, setTextContent }) => {
       };
       reader.readAsText(file);
     } else {
-        alert(intl.formatMessage({ id: "alert.chooseTxtFile" }));
+      alert(intl.formatMessage({ id: "alert.chooseTxtFile" }));
     }
   };
 

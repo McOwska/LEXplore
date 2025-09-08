@@ -1,12 +1,12 @@
 {
-    "app.title": "LEXplore",
-    "app.description": "lär dig genom att läsa",
-    "button.importText": "Importera .TXT-fil",
-    "button.typeText": "Skriv egen text",
-    "textLoader.or": "eller",
-    "alert.chooseTxtFile": "Välj en .TXT-fil",
-    "textLoader.placeholder": "Skriv eller klistra in din text här...",
-    "textLoader.submit": "Skicka",
-    "menu.availableLanguages": "Available languages",
-    "menu.about": "About the project "
+  "app.title": "LEXplore",
+  "app.description": "lär dig genom att läsa",
+  "button.importText": "Importera .TXT-fil",
+  "button.typeText": "Skriv egen text",
+  "textLoader.or": "eller",
+  "alert.chooseTxtFile": "Välj en .TXT-fil",
+  "textLoader.placeholder": "Skriv eller klistra in din text här...",
+  "textLoader.submit": "Skicka",
+  "menu.availableLanguages": "Available languages",
+  "menu.about": "About the project "
 }

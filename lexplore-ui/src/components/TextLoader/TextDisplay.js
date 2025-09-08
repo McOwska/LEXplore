@@ -1,53 +1,53 @@
-import React, { useMemo } from 'react';
-import { API_URL } from '../../constants';
+import React, { useMemo } from "react";
+import { API_URL } from "../../constants";
 
-const TextDisplay = ({ text = '' }) => {
+const TextDisplay = ({ text = "" }) => {
   const sentences = useMemo(() => {
     const parts = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [];
     return parts.map((s) => s.trim());
   }, [text]);
 
   const translateWord = (word) => {
-    console.log('Translating word:', word);
-  
+    console.log("Translating word:", word);
+
     fetch(`${API_URL}/translate-word`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ word }),
     })
       .then((res) => {
-        if (!res.ok) throw new Error('Translation failed');
+        if (!res.ok) throw new Error("Translation failed");
         return res.json();
       })
       .then((data) => {
-        console.log('Translation:', data.translation);
+        console.log("Translation:", data.translation);
       })
       .catch((err) => {
-        console.error('Error:', err);
+        console.error("Error:", err);
       });
   };
-  
+
   const translateSentence = (sentence) => {
-    console.log('Translating word:', sentence);
-  
+    console.log("Translating word:", sentence);
+
     fetch(`${API_URL}/translate-sentence`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ sentence }),
     })
       .then((res) => {
-        if (!res.ok) throw new Error('Translation failed');
+        if (!res.ok) throw new Error("Translation failed");
         return res.json();
       })
       .then((data) => {
-        console.log('Translation:', data.translation);
+        console.log("Translation:", data.translation);
       })
       .catch((err) => {
-        console.error('Error:', err);
+        console.error("Error:", err);
       });
   };
 
@@ -61,14 +61,14 @@ const TextDisplay = ({ text = '' }) => {
             {words.map((word, wIdx) => (
               <span
                 key={wIdx}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
                 onClick={() => translateWord(word)}
                 onContextMenu={(e) => {
                   e.preventDefault();
                   translateSentence(sentence);
                 }}
               >
-                {word}{' '}
+                {word}{" "}
               </span>
             ))}
           </span>

@@ -1,6 +1,16 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { IntlProvider } from "react-intl";
-import { SUPPORTED_LANGUAGES, DEFAULT_LOCALE, LOCALE_STORAGE_KEY } from "../constants";
+import {
+  SUPPORTED_LANGUAGES,
+  DEFAULT_LOCALE,
+  LOCALE_STORAGE_KEY,
+} from "../constants";
 
 const isSupported = (code) => SUPPORTED_LANGUAGES.some((l) => l.code === code);
 
@@ -19,7 +29,8 @@ export const useI18n = () => {
   return ctx;
 };
 
-const loadMessages = async (locale) => (await import(`../i18n/${locale}.json`)).default;
+const loadMessages = async (locale) =>
+  (await import(`../i18n/${locale}.json`)).default;
 
 export const I18nProvider = ({ children }) => {
   const [locale, setLocale] = useState(detectInitialLocale);
@@ -38,16 +49,26 @@ export const I18nProvider = ({ children }) => {
         if (!cancelled) setLoading(false);
       }
     })();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [locale]);
 
-  const value = useMemo(() => ({ locale, setLocale, supported: SUPPORTED_LANGUAGES }), [locale]);
+  const value = useMemo(
+    () => ({ locale, setLocale, supported: SUPPORTED_LANGUAGES }),
+    [locale],
+  );
 
   if (loading) return null;
 
   return (
     <I18nContext.Provider value={value}>
-      <IntlProvider key={locale} locale={locale} defaultLocale={DEFAULT_LOCALE} messages={messages}>
+      <IntlProvider
+        key={locale}
+        locale={locale}
+        defaultLocale={DEFAULT_LOCALE}
+        messages={messages}
+      >
         {children}
       </IntlProvider>
     </I18nContext.Provider>
