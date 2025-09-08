@@ -23,7 +23,7 @@ const MenuButton = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isMenuOpened]);
 
   return (
     <div ref={containerRef} className={styles.menuContainer}>
