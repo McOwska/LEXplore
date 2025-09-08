@@ -6,5 +6,7 @@
     "textLoader.or": "eller",
     "alert.chooseTxtFile": "Välj en .TXT-fil",
     "textLoader.placeholder": "Skriv eller klistra in din text här...",
-    "textLoader.submit": "Skicka"
+    "textLoader.submit": "Skicka",
+    "menu.availableLanguages": "Available languages",
+    "menu.about": "About the project "
 }

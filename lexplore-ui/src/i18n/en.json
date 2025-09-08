@@ -6,5 +6,7 @@
     "textLoader.or": "or",
     "alert.chooseTxtFile": "Please choose a .TXT file",
     "textLoader.placeholder": "Type or paste your text here...",
-    "textLoader.submit": "Submit"
-  }
+    "textLoader.submit": "Submit",
+    "menu.availableLanguages": "Available languages",
+    "menu.about": "About the project "
+}

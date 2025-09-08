@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { GrMenu } from "react-icons/gr";
 import styles from './Header.module.css';
+import OpenedMenu from "./OpenedMenu";
 
 const MenuButton = () => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -10,6 +11,8 @@ const MenuButton = () => {
         const handleClickOutside = (event) => {
             if (containerRef.current && !containerRef.current.contains(event.target)) {
                 setIsMenuOpened(false);
+                console.log("clicked outside")
+                console.log(isMenuOpened)
             }
         };
 
@@ -18,12 +21,16 @@ const MenuButton = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
-
+ 
     return (
         <div ref={containerRef} className={styles.menuContainer}>
-            <button className={styles.menuIcon} onClick={() => setIsMenuOpened(!isMenuOpened)}>
-                <GrMenu />
-            </button>
+            { !isMenuOpened ? 
+                <button className={styles.menuIcon} onClick={() => setIsMenuOpened(!isMenuOpened)}>
+                    <GrMenu />
+                </button> 
+                :
+                <OpenedMenu toggleMenu={() => setIsMenuOpened(!isMenuOpened)}/>
+            }
         </div>
     );
 }
