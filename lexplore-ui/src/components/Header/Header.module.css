@@ -123,6 +123,7 @@ h2 {
 
     button:hover {
         transform: scale(1.02);
+        box-shadow: none;
     }
 }
 
