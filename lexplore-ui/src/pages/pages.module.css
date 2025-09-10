@@ -4,8 +4,7 @@
     margin-bottom: 5rem;
 }
 
-.readme::after,
-.readme::before {
+.pageContainer::before {
     content: "";
     display: block;
     height: 1px;

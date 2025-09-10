@@ -10,6 +10,9 @@ const OpenedMenu = ({ toggleMenu }) => {
     <div className={`${styles.openedMenu} ${styles.buttonColors}`}>
       {/* Placeholder for the opened menu content */}
       <GrMenu className={styles.openedMenuIcon} onClick={toggleMenu} />
+      <button onClick={() => navigate("/")}>
+        {intl.formatMessage({ id: "menu.home" })}
+      </button>
       <button onClick={() => navigate("/languages")}>
         {intl.formatMessage({ id: "menu.availableLanguages" })}
       </button>

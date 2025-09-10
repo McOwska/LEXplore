@@ -15,11 +15,10 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <>
+    <div className={styles.pageContainer}>
       <div className={styles.readme}>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{md}</ReactMarkdown>
       </div>
-      <Link to="/">Go back to Home</Link>
-    </>
+    </div>
   );
 }

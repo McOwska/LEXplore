@@ -8,5 +8,6 @@
   "textLoader.placeholder": "Type or paste your text here...",
   "textLoader.submit": "Submit",
   "menu.availableLanguages": "Available languages",
-  "menu.about": "About the project "
+  "menu.about": "About the project",
+  "menu.home": "Start LEXploring"
 }

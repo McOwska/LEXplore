@@ -8,5 +8,6 @@
   "textLoader.placeholder": "Skriv eller klistra in din text här...",
   "textLoader.submit": "Skicka",
   "menu.availableLanguages": "Tillgängliga språk",
-  "menu.about": "Om projektet"
+  "menu.about": "Om projektet",
+  "menu.home": "Start LEXploring "
 }
