@@ -1,18 +1,27 @@
-import TextLoader from "./components/TextLoader/TextLoader";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
-import TextPage from "./components/TextPage/TextPage";
 import { TextProvider } from "./contexts/TextContext";
+import MainPage from "./pages/MainPage";
+import ErrorPage from "./pages/ErrorPage";
+import AboutPage from "./pages/AboutPage";
+import AvailableLanguagesPage from "./pages/AvaiableLanguagesPage";
 
 function App() {
   return (
-    <TextProvider>
-      <div className="App">
-        <Header />
-        <TextLoader />
-        <TextPage />
-      </div>
-    </TextProvider>
+    <div className="App">
+      <TextProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/languages" element={<AvailableLanguagesPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </BrowserRouter>
+      </TextProvider>
+    </div>
   );
 }
 

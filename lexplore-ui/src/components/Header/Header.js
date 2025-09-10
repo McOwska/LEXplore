@@ -1,6 +1,6 @@
 import { useIntl } from "react-intl";
 import LanguageSelector from "./LanguageSelector";
-import MenuButton from "./MenuButton";
+import MenuButton from "./Menu/MenuButton";
 import styles from "./Header.module.css";
 
 const Header = () => {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { GrMenu } from "react-icons/gr";
-import styles from "./Header.module.css";
+import styles from "../Header.module.css";
 import OpenedMenu from "./OpenedMenu";
 
 const MenuButton = () => {
