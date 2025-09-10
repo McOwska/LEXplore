@@ -1,0 +1,14 @@
+.readme {
+    text-align: left;
+    margin-inline: 5rem;
+    margin-bottom: 5rem;
+}
+
+.readme::after,
+.readme::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: black;
+    margin-top: 1rem;
+}
