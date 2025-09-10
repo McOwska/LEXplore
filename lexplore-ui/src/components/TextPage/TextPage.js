@@ -74,6 +74,16 @@ const TextPage = () => {
     setTranslation(translated);
   };
 
+  if (!text) {
+    return (
+      <div className={styles.pageTextContainer}>
+        <p className={styles.pageTextPContent}>
+          {content}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.pageTextContainer}>
       <p className={styles.pageTextPContent}>
