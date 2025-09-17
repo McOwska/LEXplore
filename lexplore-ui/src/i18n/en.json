@@ -9,5 +9,8 @@
   "textLoader.submit": "Submit",
   "menu.availableLanguages": "Available languages",
   "menu.about": "About the project",
-  "menu.home": "Start LEXploring"
+  "menu.home": "Start LEXploring",
+  "availableLanguages.desc": "Currently, LEXplore only supports Swedish to English translations.",
+  "link.backHome": "Go back to Home",
+  "errorPage.title": "Page not found"
 }

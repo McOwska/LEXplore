@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import { useIntl } from "react-intl";
 
 const AvailableLanguagesPage = () => {
+  const intl = useIntl();
+
   return (
     <div>
-      <h2>Currently available languages</h2>
-      <p>swedish</p>
-      <Link to="/">Go back to Home</Link>
+      <p>{intl.formatMessage({id: "availableLanguages.desc"})}</p>
+      <Link to="/">{intl.formatMessage({id: "link.backHome"})}</Link>
     </div>
   );
 };

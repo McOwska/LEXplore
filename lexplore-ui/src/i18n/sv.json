@@ -9,5 +9,8 @@
   "textLoader.submit": "Skicka",
   "menu.availableLanguages": "Tillgängliga språk",
   "menu.about": "Om projektet",
-  "menu.home": "Start LEXploring "
+  "menu.home": "Börja utforska LEXplore",
+  "availableLanguages.desc": "För närvarande stöder LEXplore endast översättningar från svenska till engelska.",
+  "link.backHome": "Gå tillbaka till startsidan",
+  "errorPage.title": "Sidan hittades inte"
 }
