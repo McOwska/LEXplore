@@ -1,6 +1,6 @@
 {
   "app.title": "LEXplore",
-  "app.description": "learn through reading",
+  "app.description": "learn Swedish through reading",
   "button.importText": "Import .TXT file",
   "button.typeText": "Type own text",
   "textLoader.or": "or",

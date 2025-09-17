@@ -68,7 +68,6 @@ const TextPage = () => {
 
   const handleWordContext = async (e, sentence, idx) => {
     e.preventDefault();
-    console.log(sentence.trim());
     setClickedSentence(idx);
     const translated = await getTranslation(sentence.trim(), "sentence");
     setTranslation(translated);
@@ -118,7 +117,9 @@ const TextPage = () => {
                         clickedWord?.sIdx === sIdx && clickedWord?.tIdx === tIdx
                           ? styles.sentenceHighlighted
                           : ""
-                      }`}
+                      }
+                      ${!translation ? styles.noTranslation : ""}
+                      `}
                       data-tooltip={translation}
                       onClick={(e) => handleWordClick(cleanWord, sIdx, tIdx)}
                       onContextMenu={(e) =>

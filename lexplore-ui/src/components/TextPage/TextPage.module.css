@@ -53,3 +53,7 @@
     /* transition: background 120ms ease; */
 }
 
+.noTranslation:focus::after{
+    display: none !important;
+}
+
