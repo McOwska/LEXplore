@@ -3,6 +3,7 @@
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from translator import translator
 
 app = Flask(__name__)
 CORS(app, origins="*", methods=["GET", "POST", "OPTIONS"], allow_headers="*") 
@@ -15,14 +16,17 @@ def index():
 def translate_word():
     data = request.get_json()
     word = data.get("payload", "")
-    return jsonify({"translation": word})
+    translated = translator.translate_word(word)
 
+    return jsonify({"translation": translated})
 
 @app.route("/translate-sentence", methods=["POST"])
 def translate_sentence():
     data = request.get_json()
     sentence = data.get("payload", "")
-    return jsonify({"translation": sentence})
+    translated = translator.translate_sentence(sentence)
+
+    return jsonify({"translation": translated})
 
 
 if __name__ == "__main__":
