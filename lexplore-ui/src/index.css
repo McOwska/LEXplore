@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
 
 body {
+  height: 100%;
   margin: 0;
   font-family: 'Jockey One', sans-serif;
   -webkit-font-smoothing: antialiased;

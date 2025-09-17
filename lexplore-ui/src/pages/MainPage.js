@@ -3,10 +3,10 @@ import TextPage from "../components/TextPage/TextPage";
 
 const MainPage = () => {
   return (
-    <>
+    <div>
       <TextLoader />
       <TextPage />
-    </>
+    </div>
   );
 };
 
