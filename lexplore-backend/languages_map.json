@@ -1,0 +1,10 @@
+{
+    "sv": {
+        "dict": "sv_en_plain.json",
+        "model": "Helsinki-NLP/opus-mt-sv-en"
+    },
+    "swc": {
+        "dict": "swc_en_plain.json",
+        "model": "Helsinki-NLP/opus-mt-swc-en"
+    }
+}

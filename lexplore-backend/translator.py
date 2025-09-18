@@ -2,10 +2,14 @@ from transformers import MarianMTModel, MarianTokenizer
 import json, pathlib, gzip, torch
 
 class Translator:
-    def __init__(self, model_name, dict_path):
-        self._load_model_and_dict(model_name, dict_path)
+    def __init__(self, language_code="sv"):
+        self._load_model_and_dict(language_code)
 
-    def _load_model_and_dict(self, model_name, dict_path):
+    def _load_model_and_dict(self, language_code):
+        languages_map = json.loads(pathlib.Path('./languages_map.json').read_text())
+        model_name = languages_map[language_code]["model"]
+        dict_path = 'dict/' + languages_map[language_code]["dict"]
+
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
         self.model = MarianMTModel.from_pretrained(model_name)
         self.dictionary = json.loads(pathlib.Path(dict_path).read_text())
@@ -26,7 +30,7 @@ class Translator:
             translated = self.translate_sentence(input_word)
         return translated
 
-    def change_language(self, model_name, dict_path):
-        self._load_model_and_dict(model_name, dict_path)
+    def change_language(self, language_code):
+        self._load_model_and_dict(language_code)
     
-translator = Translator("Helsinki-NLP/opus-mt-sv-en", "dict/sv_en_plain.json")
+translator = Translator("swc")
