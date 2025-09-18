@@ -10,7 +10,10 @@
   "menu.availableLanguages": "Available languages",
   "menu.about": "About the project",
   "menu.home": "Start LEXploring",
-  "availableLanguages.desc": "Currently, LEXplore only supports Swedish to English translations.",
+  "availableLanguages.desc": "Here's the list of translations currently supported by LEXplore:",
+  "availableLanguages.sv_en": "Swedish to English",
+  "availableLanguages.swc_en": "Swachili to English",
+  "availableLanguages.chooseLanguage": "Choose the language you'd lik to explore:",
   "link.backHome": "Go back to Home",
   "errorPage.title": "Page not found"
 }

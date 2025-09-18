@@ -11,3 +11,7 @@
     background-color: black;
     margin-top: 1rem;
 }
+
+.blockContainer {
+    display: block;
+}
