@@ -6,7 +6,7 @@ from flask_cors import CORS
 from translator import translator
 
 app = Flask(__name__)
-CORS(app, origins="*", methods=["GET", "POST", "OPTIONS"], allow_headers="*") 
+CORS(app, origins="*", methods=["GET", "POST", "OPTIONS", "PATCH"], allow_headers="*") 
 
 @app.route("/")
 def index():
