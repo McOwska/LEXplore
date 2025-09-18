@@ -21,7 +21,7 @@ class Translator:
         try:
             translated = self.dictionary[input_word]
         except:
-            translated = '404 - translation not found'
+            translated = self.translate_sentence(input_word)
         return translated
 
     
