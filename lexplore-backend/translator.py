@@ -3,9 +3,11 @@ import json, pathlib, gzip, torch
 
 class Translator:
     def __init__(self, model_name, dict_path):
+        self._load_model_and_dict(model_name, dict_path)
+
+    def _load_model_and_dict(self, model_name, dict_path):
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
         self.model = MarianMTModel.from_pretrained(model_name)
-
         self.dictionary = json.loads(pathlib.Path(dict_path).read_text())
     
     def translate_sentence(self, input_sentence):
@@ -24,5 +26,7 @@ class Translator:
             translated = self.translate_sentence(input_word)
         return translated
 
+    def change_language(self, model_name, dict_path):
+        self._load_model_and_dict(model_name, dict_path)
     
 translator = Translator("Helsinki-NLP/opus-mt-sv-en", "dict/sv_en_plain.json")
