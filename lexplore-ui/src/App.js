@@ -15,13 +15,13 @@ function App() {
       <TextProvider>
         <TranslationLanguageProvider>
           <BrowserRouter>
-              <Header />
-              <Routes>
-                <Route path="/" element={<MainPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/languages" element={<AvailableLanguagesPage />} />
-                <Route path="*" element={<ErrorPage />} />
-              </Routes>
+            <Header />
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/languages" element={<AvailableLanguagesPage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
             <Footer />
           </BrowserRouter>
         </TranslationLanguageProvider>

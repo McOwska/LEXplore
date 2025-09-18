@@ -76,9 +76,7 @@ const TextPage = () => {
   if (!text) {
     return (
       <div className={styles.pageTextContainer}>
-        <p className={styles.pageTextPContent}>
-          {content}
-        </p>
+        <p className={styles.pageTextPContent}>{content}</p>
       </div>
     );
   }

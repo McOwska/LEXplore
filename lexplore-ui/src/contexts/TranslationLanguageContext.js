@@ -2,7 +2,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const TranslationLanguageContext = createContext();
 
-export const useTranslationLanguage = () => useContext(TranslationLanguageContext);
+export const useTranslationLanguage = () =>
+  useContext(TranslationLanguageContext);
 
 export const TranslationLanguageProvider = ({ children }) => {
   const [translationLanguage, setTranslationLanguage] = useState(() => {
@@ -14,7 +15,9 @@ export const TranslationLanguageProvider = ({ children }) => {
   }, [translationLanguage]);
 
   return (
-    <TranslationLanguageContext.Provider value={{ translationLanguage, setTranslationLanguage }}>
+    <TranslationLanguageContext.Provider
+      value={{ translationLanguage, setTranslationLanguage }}
+    >
       {children}
     </TranslationLanguageContext.Provider>
   );
