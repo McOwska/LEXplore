@@ -35,9 +35,14 @@
     color: white;
     border-radius: 0.4rem;
     padding: 0.1rem 0.5rem;
-    white-space: nowrap;
     pointer-events: none;
     z-index: 10;
+
+    display: block;             
+    width: max-content;         
+    max-width: 20rem;           
+    white-space: normal;        
+    overflow-wrap: anywhere;
   }
 
 .wordWrapper {
