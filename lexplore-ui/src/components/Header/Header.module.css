@@ -2,7 +2,7 @@ h1 {
     font-size: 4rem;
     margin: 0;
     margin-top: 1rem;
-    color: #001BB7;
+    color: var(--color-primary);
 
 }
 
@@ -80,7 +80,7 @@ h2 {
 
 .buttonColors {
     background-color: transparent;
-    color: #bbbbbb;
+    color: var(--color-button-text);
 }
 
 .languageOptionButton {
@@ -102,7 +102,7 @@ h2 {
 }
 
 .menuIcon:hover {
-    color: #bbbbbb;
+    color: var(--color-button-text);
 
     svg {
         transform: scale(1.05);

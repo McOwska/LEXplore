@@ -8,7 +8,7 @@
 }
 
 .languageButtonActive {
-    border: solid 5px #FF8040;
+    border: solid 5px var(--color-secondary);
     transform: scale(0.85);
 }
 

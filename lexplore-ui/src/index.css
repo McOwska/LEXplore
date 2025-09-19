@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+@import './styles/tokens.css';
 
 body {
   height: 100%;

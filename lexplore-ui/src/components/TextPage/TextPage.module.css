@@ -31,8 +31,8 @@
     left: 50%;
     bottom: 100%;
     transform: translate(-50%, -6px);
-    background: #FF8040;
-    color: white;
+    background: var(--color-secondary);
+    color: var(--color-text-white);
     border-radius: 0.4rem;
     padding: 0.1rem 0.5rem;
     pointer-events: none;

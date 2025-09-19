@@ -1,5 +1,5 @@
 .backgroundContainer {
-    background-color: #E9E9E9;
+    background-color: var(--color-light-background);
     display: flex;
     justify-content: center;
     align-items: center;
