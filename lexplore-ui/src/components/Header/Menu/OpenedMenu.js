@@ -8,15 +8,14 @@ const OpenedMenu = ({ toggleMenu }) => {
   const navigate = useNavigate();
   return (
     <div className={`${styles.openedMenu} ${styles.buttonColors}`}>
-      {/* Placeholder for the opened menu content */}
       <GrMenu className={styles.openedMenuIcon} onClick={toggleMenu} />
-      <button onClick={() => navigate("/")}>
+      <button onClick={() => { navigate("/"); toggleMenu(); }}>
         {intl.formatMessage({ id: "menu.home" })}
       </button>
-      <button onClick={() => navigate("/languages")}>
+      <button onClick={() => { navigate("/languages"); toggleMenu(); }}>
         {intl.formatMessage({ id: "menu.availableLanguages" })}
       </button>
-      <button onClick={() => navigate("/about")}>
+      <button onClick={() => { navigate("/about"); toggleMenu(); }}>
         {intl.formatMessage({ id: "menu.about" })}
       </button>
     </div>
