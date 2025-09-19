@@ -134,7 +134,7 @@ h2 {
 }
 
 .openedMenuIcon {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
     cursor: pointer;
 }
 
@@ -149,4 +149,5 @@ h2 {
     object-fit: cover;
     object-position: center;
     margin: 1rem;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
 }
