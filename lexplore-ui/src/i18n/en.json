@@ -15,5 +15,7 @@
   "availableLanguages.swc_en": "Swachili to English",
   "availableLanguages.chooseLanguage": "Choose the language you'd lik to explore:",
   "link.backHome": "Go back to Home",
-  "errorPage.title": "Page not found"
+  "errorPage.title": "Page not found",
+  "main.loadingModel":"Error when loading langauge model. Try again later.",
+  "main.loadingModelError": "Loading language model.."
 }

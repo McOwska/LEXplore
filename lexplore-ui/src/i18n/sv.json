@@ -12,5 +12,7 @@
   "menu.home": "Börja utforska LEXplore",
   "availableLanguages.desc": "För närvarande stöder LEXplore endast översättningar från svenska till engelska.",
   "link.backHome": "Gå tillbaka till startsidan",
-  "errorPage.title": "Sidan hittades inte"
+  "errorPage.title": "Sidan hittades inte",
+  "main.loadingModel": "Fel vid inläsning av språkmodellen. Försök igen senare.",
+  "main.loadingModelError": "Laddar språkmodell..."
 }
