@@ -33,24 +33,23 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    console.log('load language model', translationLanguage);
     loadLanguageModel().then((res) => {
       if(res.status !== 'success') setIsLoadingError(true);
        setIsLoading(false)
       });
-  }, [])
-
-  if (isLoadingError) {
-    return (
-      <p>{ intl.formatMessage({id: "main.loadingModelError"}) }</p>
-    );
-  }
+  }, []);
 
   if (isLoading) {
     return (
       <p>{ intl.formatMessage({id: "main.loadingModel" }) }</p>
     );
   };
+
+  if (isLoadingError) {
+    return (
+      <p>{ intl.formatMessage({id: "main.loadingModelError"}) }</p>
+    );
+  }
 
   return (
     <div>
