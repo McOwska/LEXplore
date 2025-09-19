@@ -1,5 +1,5 @@
 from transformers import MarianMTModel, MarianTokenizer
-import json, pathlib, torch, gc
+import json, pathlib, torch, gc, threading
 
 class Translator:
     def __init__(self, language_code="sv"):
@@ -9,6 +9,7 @@ class Translator:
             self.device = torch.device("cuda")
         else:
             self.device = torch.device("cpu")
+        self._lock = threading.RLock()
         self._load_model_and_dict(language_code)
 
     def _load_model_and_dict(self, language_code: str):
@@ -17,10 +18,10 @@ class Translator:
             raise ValueError(f"Unsupported language_code: {language_code}")
 
         model_name = languages_map[language_code]["model"]
-        dict_path = pathlib.Path('dict') / languages_map[language_code]["dict"]
+        dict_path = pathlib.Path('dict') \
+                    / languages_map[language_code]["dict"]
 
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
-
         self.model = MarianMTModel.from_pretrained(
             model_name,
             device_map=None,
@@ -35,6 +36,28 @@ class Translator:
         self.model.generation_config.eos_token_id = self.tokenizer.eos_token_id
 
         self.dictionary = json.loads(pathlib.Path(dict_path).read_text())
+
+    def _unload(self):
+        if hasattr(self, "model") and self.model is not None:
+            try:
+                self.model.to("cpu")
+            except Exception:
+                pass
+            del self.model
+
+        if hasattr(self, "tokenizer") and self.tokenizer is not None:
+            del self.tokenizer
+
+        self.dictionary = None
+
+        gc.collect()
+        if self.device.type == "mps":
+            try:
+                torch.mps.empty_cache()
+            except Exception:
+                pass
+        elif self.device.type == "cuda":
+            torch.cuda.empty_cache()
 
     def translate_sentence(self, input_sentence: str) -> str:
         encoded = self.tokenizer(
@@ -59,13 +82,8 @@ class Translator:
             return self.translate_sentence(input_word)
 
     def change_language(self, language_code: str):
-        if hasattr(self, "model") and self.model is not None:
-            del self.model
-            gc.collect()
-            if self.device.type == "mps":
-                torch.mps.empty_cache()
-            elif self.device.type == "cuda":
-                torch.cuda.empty_cache()
-        self._load_model_and_dict(language_code)
+        with self._lock:
+            self._unload()
+            self._load_model_and_dict(language_code)
 
 translator = Translator("swc")

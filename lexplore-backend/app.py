@@ -30,14 +30,13 @@ def translate_sentence():
 
 @app.route("/change-language", methods=["PATCH"])
 def change_language():
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
     language_code = data.get("language_code", "")
     try:
         translator.change_language(language_code)
-    except:
-        return jsonify({"status": "error", "message": "Unsupported language"}), 400
-
-    return jsonify({"status": "success", "language_code": language_code}), 200 
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 400
+    return jsonify({"status": "success", "language_code": language_code}), 200
 
 if __name__ == "__main__":
     print('Starting LExplore Backend...')
