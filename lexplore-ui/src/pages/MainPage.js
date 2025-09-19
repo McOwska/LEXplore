@@ -34,21 +34,17 @@ const MainPage = () => {
 
   useEffect(() => {
     loadLanguageModel().then((res) => {
-      if(res.status !== 'success') setIsLoadingError(true);
-       setIsLoading(false)
-      });
+      if (res.status !== "success") setIsLoadingError(true);
+      setIsLoading(false);
+    });
   }, []);
 
   if (isLoading) {
-    return (
-      <p>{ intl.formatMessage({id: "main.loadingModel" }) }</p>
-    );
-  };
+    return <p>{intl.formatMessage({ id: "main.loadingModel" })}</p>;
+  }
 
   if (isLoadingError) {
-    return (
-      <p>{ intl.formatMessage({id: "main.loadingModelError"}) }</p>
-    );
+    return <p>{intl.formatMessage({ id: "main.loadingModelError" })}</p>;
   }
 
   return (
