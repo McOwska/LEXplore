@@ -55,7 +55,7 @@ const TextPage = () => {
       if (!res.ok) throw new Error("Translation failed");
 
       const data = await res.json();
-      return data.translation;
+      return data.translation.replaceAll("\n", " / ");
     } catch (err) {
       console.error("Error:", err);
       return err;
