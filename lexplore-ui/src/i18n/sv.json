@@ -10,9 +10,13 @@
   "menu.availableLanguages": "Tillgängliga språk",
   "menu.about": "Om projektet",
   "menu.home": "Börja utforska LEXplore",
-  "availableLanguages.desc": "För närvarande stöder LEXplore endast översättningar från svenska till engelska.",
+  "availableLanguages.desc": "Här är listan över översättningar som för närvarande stöds av LEXplore:",
+  "availableLanguages.sv_en": "Svenska till engelska",
+  "availableLanguages.swc_en": "Swahili till engelska",
+  "availableLanguages.chooseLanguage": "Välj språket du vill utforska:",
   "link.backHome": "Gå tillbaka till startsidan",
   "errorPage.title": "Sidan hittades inte",
-  "main.loadingModel": "Fel vid inläsning av språkmodellen. Försök igen senare.",
-  "main.loadingModelError": "Laddar språkmodell..."
+  "main.loadingModelError": "Fel vid inläsning av språkmodellen. Försök igen senare.",
+  "main.loadingModel": "Laddar språkmodell...",
+  "main.noTextContent": "Inget textinnehåll tillgängligt."
 }

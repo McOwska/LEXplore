@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
+import { useIntl } from "react-intl";
 import { useText } from "../../contexts/TextContext";
 import styles from "./TextPage.module.css";
 import { API_URL } from "../../constants";
 
 const TextPage = () => {
+  const intl = useIntl();
   const { text } = useText();
 
-  const content = text?.trim() || "No text content available.";
+  const content = text?.trim() || intl.formatMessage({ id: "main.noTextContent" });
   const sentences = content.match(/[^.!?]+[.!?]*/g) || [content];
 
   const [clickedSentence, setClickedSentence] = useState(null);
